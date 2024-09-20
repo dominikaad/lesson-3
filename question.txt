@@ -1,0 +1,3 @@
+[{"q" : " How many contyniets has Earth?", "d" : "3", "a" : "6"},
+{"q" : " How many days do we have on the week ", "d" : "1", "a" : "7"},
+{"q" : " 2+2*2 = ?", "d" : "4", "a" : "6"}]
