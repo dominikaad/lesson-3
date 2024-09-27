@@ -12,19 +12,19 @@ class Question():
         self.answer = answer
         self.flag = False
         self.answ_player = None
-        # self.point = self.get_points()
+        self.point = self.get_points()
 
-    def is_correct (self):
-        self.answ_player = input('Ответ: ')
+    def is_correct(self):
+
         if self.answ_player == self.answer:
-            self.flag = True
-            print(self.build_positive_feedback())
-        else:
-            self.flag = False
-            print(self.build_negative_feedback())
+            return True
 
-    # def get_points(self):
-    #     return self.deef*10
+        else:
+            return False
+
+
+    def get_points(self):
+        return self.deef*10
 
     def build_question(self):
         return f"Вопрос: {self.text}\nСложность {self.deef}/5"
@@ -48,12 +48,12 @@ def get_report():
     for quest in list_:
         # report += f'{quest.build_question()}\n'
         print(quest.build_question())
-        quest.is_correct()
-        if quest.flag:
-            score += int(quest.deef)
-            end_score = 10*score
+        quest.answ_player = input('Ответ: ')
+        if quest.is_correct():
+            print(quest.build_positive_feedback())
+            score+=quest.point
         else:
-            None
-    return end_score
+            print(quest.build_negative_feedback())
+
 get_report()
-print(f'SCORE:{end_score}')
+print(f'SCORE:{score}')
