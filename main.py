@@ -17,9 +17,11 @@ class Question():
     def is_correct (self):
         self.answ_player = input('Ответ: ')
         if self.answ_player == self.answer:
+            print(self.answ_player)
             self.flag = True
             self.build_positive_feedback()
         else:
+            print(5555)
             self.flag = False
             self.build_negative_feedback()
     def get_points(self):
